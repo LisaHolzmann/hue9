@@ -12,6 +12,7 @@ import java.time.Month;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import javafx.util.converter.LocalDateTimeStringConverter;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -211,8 +212,44 @@ public class TimeUtilProTest {
     @Test
     public void testCalendarToLocalDate() {
         System.out.println("calendarToLocalDate");
-        Calendar dateTime = null;
-        LocalDate expResult = null;
+        Calendar dateTime = new GregorianCalendar(2003, 2, 13);
+        LocalDate expResult = LocalDate.of(2003, 3, 13);
+        LocalDate result = TimeUtilPro.calendarToLocalDate(dateTime);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    //Falsches Monat
+    @Test
+    public void testCalendarToLocalDate2() {
+        System.out.println("calendarToLocalDate");
+        Calendar dateTime = new GregorianCalendar(2003, 15, 13);
+        LocalDate expResult = LocalDate.of(2003, 16, 13);
+        LocalDate result = TimeUtilPro.calendarToLocalDate(dateTime);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    //Falscher Tag
+    @Test
+    public void testCalendarToLocalDate3() {
+        System.out.println("calendarToLocalDate");
+        Calendar dateTime = new GregorianCalendar(2003, 2, 36);
+        LocalDate expResult = LocalDate.of(2003, 3, 36);
+        LocalDate result = TimeUtilPro.calendarToLocalDate(dateTime);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    //Beides falsch
+    @Test
+    public void testCalendarToLocalDate4() {
+        System.out.println("calendarToLocalDate");
+        Calendar dateTime = new GregorianCalendar(2003, 20, 36);
+        LocalDate expResult = LocalDate.of(2003, 21, 36);
         LocalDate result = TimeUtilPro.calendarToLocalDate(dateTime);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
