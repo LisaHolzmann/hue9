@@ -85,7 +85,7 @@ public class TimeUtilProTest {
     @Test
     public void testIntToLocalDate4() {
         System.out.println("intToLocalDate");
-        int date = 20031501;
+        int date = 20031534;
         LocalDate expResult = LocalDate.of(2003, 15, 34);
         LocalDate result = TimeUtilPro.intToLocalDate(date);
         assertEquals(expResult, result);
@@ -216,8 +216,7 @@ public class TimeUtilProTest {
         LocalDate expResult = LocalDate.of(2003, 3, 13);
         LocalDate result = TimeUtilPro.calendarToLocalDate(dateTime);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+
     }
 
     //Falsches Monat
@@ -228,8 +227,7 @@ public class TimeUtilProTest {
         LocalDate expResult = LocalDate.of(2003, 16, 13);
         LocalDate result = TimeUtilPro.calendarToLocalDate(dateTime);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+
     }
 
     //Falscher Tag
@@ -240,8 +238,7 @@ public class TimeUtilProTest {
         LocalDate expResult = LocalDate.of(2003, 3, 36);
         LocalDate result = TimeUtilPro.calendarToLocalDate(dateTime);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+
     }
 
     //Beides falsch
@@ -252,8 +249,7 @@ public class TimeUtilProTest {
         LocalDate expResult = LocalDate.of(2003, 21, 36);
         LocalDate result = TimeUtilPro.calendarToLocalDate(dateTime);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+
     }
 
     /**
